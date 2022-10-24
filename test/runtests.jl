@@ -3,7 +3,7 @@ using SafeTestsets
 const GROUP = get(ENV, "GROUP", "All")
 const is_APPVEYOR = Sys.iswindows() && haskey(ENV, "APPVEYOR")
 const is_TRAVIS = haskey(ENV, "TRAVIS")
-
+println(GROUP)
 @time begin
 if GROUP == "All" || GROUP == "OperatorInterface"
     @time @safetestset "Scalar Operators" begin include("scalar.jl") end
